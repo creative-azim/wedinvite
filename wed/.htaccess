@@ -1,0 +1,21 @@
+# Optional — only used on Apache / cPanel hosting. Safe to delete on GitHub Pages, Netlify, etc.
+<IfModule mod_mime.c>
+  AddType video/mp4 .mp4
+  AddType audio/mpeg .mp3
+</IfModule>
+
+<IfModule mod_deflate.c>
+  AddOutputFilterByType DEFLATE text/html text/css application/javascript
+</IfModule>
+
+<IfModule mod_expires.c>
+  ExpiresActive On
+  ExpiresByType image/jpeg "access plus 1 month"
+  ExpiresByType image/png  "access plus 1 month"
+  ExpiresByType video/mp4  "access plus 1 month"
+  ExpiresByType audio/mpeg "access plus 1 month"
+  # CSS/JS: short cache so text edits in config.js show up quickly
+  ExpiresByType text/css "access plus 1 hour"
+  ExpiresByType application/javascript "access plus 1 hour"
+</IfModule>
+
